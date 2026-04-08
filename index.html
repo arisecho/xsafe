@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>xsafe Pro</title>
+<title>widey Pro</title>
 <style>
 body{margin:0;font-family:Arial,sans-serif;background:#0b1220;color:#fff}
 .container{max-width:1000px;margin:auto;padding:20px}
@@ -26,20 +26,20 @@ img{max-width:100%;border-radius:10px;margin:15px 0}.loader{margin:20px auto;wid
 <script>
 const app = document.getElementById("app");
 const firebaseConfig = {
-  apiKey: "AIzaSyDNepkZLKn-_Jdoc5cLLituXfwTOviDM4U",
-  authDomain: "xsafe-shortlink.firebaseapp.com",
-  databaseURL: "https://xsafe-shortlink-default-rtdb.asia-southeast1.firebasedatabase.app",
-  projectId: "xsafe-shortlink",
-  storageBucket: "xsafe-shortlink.firebasestorage.app",
-  messagingSenderId: "883524196114",
-  appId: "1:883524196114:web:2d3a1612ff74bb78d845cb"
+  apiKey: "AIzaSyCmDGUJQ-Kam80QBKZbYMrowjGoeRJVNTI",
+  authDomain: "widey-short.firebaseapp.com",
+  databaseURL: "https://widey-short-default-rtdb.firebaseio.com",
+  projectId: "widey-short",
+  storageBucket: "widey-short.firebasestorage.app",
+  messagingSenderId: "465556478064",
+  appId: "1:465556478064:web:0a7b2a2cf87ae155b2fcb5"
 };
 firebase.initializeApp(firebaseConfig);
 const db = firebase.database();
 
-const DOMAIN = "https://xsafe.biz.id";
+const DOMAIN = "https://widey.biz.id";
 const PIN = "270491";
-const AUTO_SHORT_URL = "https://omg10.com/4/10410353";
+const AUTO_SHORT_URL = "https://fundingfashioned.com/a4vd13952a?key=9147ec6f3bd8b8ca1b105b1edbe281e1";
 const EMOJIS = ["🔞👉","✅👉","🔴➡️","🎥▶️","🔥👉","💥➡️","⭐👉","⚡➡️","🚀👉","🎯➡️","💎👉","📌👉","📍➡️","📢👉","🎬👉","📺👉","📱👉","💻➡️","▶️👉","🔁👉","🆕👉","❗👉","⚠️👉","🚨➡️","🎁👉","🎉➡️","💡👉","👀👉","👉👉","👇➡️","🚗➡️","✈️➡️"];
 
 function getRandomEmoji(){ return EMOJIS[Math.floor(Math.random()*EMOJIS.length)]; }
@@ -120,7 +120,7 @@ async function createShort(url){
 }
 
 async function generate(){
-  let url = document.getElementById("xsafeput").value.trim();
+  let url = document.getElementById("wideyput").value.trim();
   if(!url) return alert("Enter URL");
   url = normalize(url);
 
@@ -171,7 +171,7 @@ function loadAnalysis(){
 }
 
 function dashboard(){
-  app.innerHTML = `<div class="container"><div class="card"><h2>Create Shortlink</h2><input id="xsafeput" placeholder="Enter URL"><button onclick="generate()">Generate</button><div id="result"></div></div><div class="card"><h2>Bulk Generator</h2><textarea id="bulkInput" rows="5"></textarea><button onclick="bulk()">Generate Bulk</button><div id="bulkResult"></div></div><div class="card"><h2>Redirect Cooldown Settings</h2><input id="redirectTime" type="number" min="1" value="${getRedirectTime()}"><button onclick="saveRedirectTime()">Save</button></div><div id="analysis"></div></div>`;
+  app.innerHTML = `<div class="container"><div class="card"><h2>Create Shortlink</h2><input id="wideyput" placeholder="Enter URL"><button onclick="generate()">Generate</button><div id="result"></div></div><div class="card"><h2>Bulk Generator</h2><textarea id="bulkInput" rows="5"></textarea><button onclick="bulk()">Generate Bulk</button><div id="bulkResult"></div></div><div class="card"><h2>Redirect Cooldown Settings</h2><input id="redirectTime" type="number" min="1" value="${getRedirectTime()}"><button onclick="saveRedirectTime()">Save</button></div><div id="analysis"></div></div>`;
   loadAnalysis();
 }
 

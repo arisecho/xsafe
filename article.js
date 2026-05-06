@@ -51,7 +51,7 @@ function buildContent(){
   return html;
 }
 
-const articles = Array.from({length:1000}, (_,i)=>({
+const articles = Array.from({length:100}, (_,i)=>({
   title: randomFrom(titles) + " " + (i+1),
   slug: slugify(randomFrom(titles)) + "-" + (i+1),
   metaDescription: "Premium article content with SEO style layout.",
@@ -63,5 +63,14 @@ const articles = Array.from({length:1000}, (_,i)=>({
 }));
 
 function getRandomArticle(){
-  return randomFrom(articles);
+  return {
+    title: randomFrom(titles),
+    slug: slugify(randomFrom(titles)),
+    metaDescription: "Premium article content with SEO style layout.",
+    author: randomFrom(authors),
+    publishDate: randomDate(),
+    readTime: (Math.floor(Math.random()*5)+3)+" min read",
+    category: randomFrom(categories),
+    content: buildContent()
+  };
 }
